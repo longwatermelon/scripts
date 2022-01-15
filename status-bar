@@ -1,0 +1,15 @@
+#!/bin/sh
+
+while true
+do
+    display="time: "
+    display+=$(date +"%T")
+
+    display+=" | battery: "
+    display+="$(cat /sys/class/power_supply/BAT0/capacity)%"
+
+    xsetroot -name "$display"
+
+    sleep 60
+done;
+
